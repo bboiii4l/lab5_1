@@ -1,0 +1,40 @@
+/* Плавні переходи для теми */
+body {
+    transition: background-color 0.5s, color 0.5s;
+  }
+  
+  /* Модалка */
+  #modal {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  #modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+  }
+  #modal:not(.hidden) {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Коментарі */
+  .comment {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .comment:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  /* Кнопки */
+  button {
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  button:hover {
+    transform: translateY(-1px);
+  }
+  
+  /* Плавна анімація header/footer при зміні теми */
+  header, footer {
+    transition: background 0.5s, color 0.5s;
+  }
