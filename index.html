@@ -18,10 +18,10 @@
 <body class="transition-colors duration-500">
 
   <!-- Header -->
-  <header class="text-center py-10 bg-gradient-to-r from-yellow-200 to-orange-200 dark:from-blue-900 dark:to-purple-900 transition-colors duration-500">
+  <header class="text-center py-10 bg-gradient-to-r from-blue-200 to-teal-200 dark:from-indigo-900 dark:to-purple-800 transition-colors duration-500">
     <h1 class="text-4xl font-bold mb-2">Мандри світом з Андрієм</h1>
     <p class="text-lg mb-4">Відкрий нові горизонти та країни разом зі мною</p>
-    <button id="theme-toggle" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">Змінити тему</button>
+    <button id="theme-toggle" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">Змінити тему</button>
   </header>
 
   <!-- Відгуки туристів -->
@@ -31,7 +31,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-6 bg-gray-200 dark:bg-gray-800 transition-colors duration-500">
+  <footer class="text-center py-6 bg-gray-100 dark:bg-gray-900 transition-colors duration-500">
     <p>© 2026 Мандри світом</p>
     <div id="browser-info" class="mt-2 text-sm"></div>
   </footer>
@@ -46,12 +46,31 @@
         <input type="email" name="email" placeholder="Email" required class="w-full p-2 border rounded">
         <input type="tel" name="phone" placeholder="Телефон" class="w-full p-2 border rounded">
         <textarea name="message" placeholder="Ваші побажання чи коментарі" class="w-full p-2 border rounded h-24"></textarea>
-        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Підписатися</button>
+        <button type="submit" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">Підписатися</button>
       </form>
     </div>
   </div>
 
   <!-- Скрипти -->
   <script src="script.js"></script>
+  <script>
+    // Скрипт для перемикання теми
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Автоматично вибираємо тему за часом
+    window.addEventListener('DOMContentLoaded', () => {
+      const hour = new Date().getHours();
+      if (hour >= 7 && hour < 21) {
+        body.classList.remove('dark');
+      } else {
+        body.classList.add('dark');
+      }
+    });
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>
